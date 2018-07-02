@@ -1,0 +1,63 @@
+<template>
+  <view>
+
+      hello
+  </view>
+    
+    
+
+</template>
+
+
+<script>
+// tabBar.js
+export default {
+  config: {
+    navigationStyle: "custom",
+    // navigationBarTextStyle: "white",
+    backgroundColor: "#F9F9F9",
+    navigationBarTitleText:'hello'
+  },
+  data() {
+    return {
+      items: [],
+      val: 30
+    }
+  },
+  methods: {
+    tabresult() {
+      ui.switchTab({
+        url: "/pages/other/other"
+      })
+    },
+    navigateBack() {
+      ui.navigateBack()
+    }
+  },
+  mounted() {
+    for (let i = 1; i <= this.val; i++) {
+      this.items.push(`列表项目${i}`)
+    }
+  }
+}
+</script>
+
+<style lang="less">
+// tabBar.less
+.nav_bar {
+  background: #39f;
+  .title {
+    color: #fff;
+    font-size: 16px;
+  }
+}
+
+.content {
+  padding: 10px;
+  height: 100px;
+  .title {
+    font-size: 20px;
+    text-align: center;
+  }
+}
+</style>

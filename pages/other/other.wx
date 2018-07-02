@@ -1,0 +1,43 @@
+<template>
+  <view>
+
+      hello2222
+  </view>
+    
+    
+
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      items: [],
+      val: 1
+    }
+  },
+  methods: {
+    tabresult() {
+      ui.switchTab({
+        url: "/pages/other/setting"
+      })
+    }
+  },
+  mounted() {
+    for (let i = 30; i >= this.val; i--) {
+      this.items.push(`列表项目${i}`)
+    }
+  }
+}
+</script>
+
+<style lang="less">
+.content {
+  padding: 10px;
+  height: 60px;
+  .title {
+    font-size: 20px;
+    text-align: center;
+  }
+}
+</style>

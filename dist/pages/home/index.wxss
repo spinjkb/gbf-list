@@ -63,6 +63,14 @@
 .buttonContent {
   padding: 50px;
 }
+.content {
+  padding: 10px;
+  height: 60px;
+}
+.content .title {
+  font-size: 20px;
+  text-align: center;
+}
 .photo_head {
   width: 100%;
   display: flex;

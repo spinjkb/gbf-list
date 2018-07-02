@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/other/setting",
+    "pages/other/other",
     "pages/home/index"
   ],
   "window": {
@@ -14,5 +16,23 @@
   },
   "theme": {
     "theme-color": "#39f"
+  },
+  "tabBar": {
+    "color": "#555",
+    "selectedColor": "#de3029",
+    "borderStyle": "rgba(231, 231, 231, 0.6)",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/other/setting",
+        "iconName": "首页",
+        "text": "演示1-1"
+      },
+      {
+        "pagePath": "pages/other/other",
+        "iconName": "setting",
+        "text": "演示1-2"
+      }
+    ]
   }
 }

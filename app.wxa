@@ -3,23 +3,45 @@
 </template>
 
 <script>
-import system from './static/utils/system'
+import system from "./static/utils/system"
 export default {
   config: {
     usingComponents: {},
-    pages: ['pages/home/index', 'pages/home/a'],
+    pages: [
+      "pages/other/setting", 
+    "pages/other/other", 
+      "pages/home/index",
+    ],
     window: {
-      backgroundTextStyle: 'dark',
-      backgroundColor: '#efefef',
-      navigationBarBackgroundColor: '#ffffff',
-      navigationBarTitleText: 'TouchUI',
-      navigationBarTextStyle: 'black'
+      backgroundTextStyle: "dark",
+      backgroundColor: "#efefef",
+      navigationBarBackgroundColor: "#ffffff",
+      navigationBarTitleText: "TouchUI",
+      navigationBarTextStyle: "black"
     },
     networkTimeout: {
       request: 10000
     },
     theme: {
-      'theme-color': '#39f'
+      "theme-color": "#39f"
+    },
+    tabBar: {
+      color: "#555",
+      selectedColor: "#de3029",
+      borderStyle: "rgba(231, 231, 231, 0.6)",
+      backgroundColor: "#fff",
+      list: [
+        {
+          pagePath: "pages/other/setting",
+          iconName: "首页",
+          text: "演示1-1"
+        },
+        {
+          pagePath: "pages/other/other",
+          iconName: "setting",
+          text: "演示1-2"
+        }
+      ]
     }
   },
   globalData: {},
@@ -32,5 +54,5 @@ export default {
 </script>
 
 <style lang="less">
-@import './static/styles/index.less';
+@import "./static/styles/index.less";
 </style>

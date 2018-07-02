@@ -27,8 +27,8 @@ exports.default = Page({
   },
   selectImg: function selectImg(e) {
     wx.showToast({
-      title: '点击' + e.target.id,
-      icon: 'success',
+      title: "点击" + e.target.id,
+      icon: "success",
       duration: 2000
     });
   }
