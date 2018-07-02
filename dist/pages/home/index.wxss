@@ -1,0 +1,88 @@
+/* 1像素解决方案 */
+/*
+ * 清除1px
+ */
+/*
+ * 清除浮动
+ */
+/*
+ * mobile
+ */
+/*
+ * 1px
+ */
+/*
+ * text
+ */
+/* 垂直居中 */
+/* 水平居中 */
+/* 水平垂直居中 */
+/* 超出部分出省略号 */
+/* 多行文本超出部分省略号 */
+.select_container .column-content {
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+  width: 100%;
+  background-color: #eee;
+  border-radius: 5px;
+  position: sticky;
+  top: 0;
+}
+.photo_head {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+.photo_head .photo_head_item {
+  box-sizing: border-box;
+  background-color: white;
+  flex: 0 0 46%;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+.photo_head .photo_head_item .photo_img {
+  background-size: 90% 90%;
+  height: 100px;
+}
+.photo_head .photo_head_item .photo_title {
+  text-align: center;
+  display: block;
+}
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.starContent {
+  padding: 50px 50px 0px 50px;
+}
+.buttonContent {
+  padding: 50px;
+}
+.photo_head {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+.photo_head .photo_head_item {
+  box-sizing: border-box;
+  background-color: white;
+  flex: 0 0 46%;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+.photo_head .photo_head_item .photo_img {
+  background-size: 90% 90%;
+  height: 100px;
+}
+.photo_head .photo_head_item .photo_title {
+  text-align: center;
+  display: block;
+}

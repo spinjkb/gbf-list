@@ -1,0 +1,48 @@
+<view>
+  <!-- 筛选 -->
+  <view class="select_container">
+    <view class="ui-row" style="margin-bottom: 20px;">
+      <view class="ui-col" style="padding-left: 20px;">
+        <view class="ui-col-content">
+          <view class="column-content">
+            <picker bindchange="changeElement" value="{{selectElement}}" range="{{element}}">
+              <view class="picker">
+                属性：{{element[selectElement]}}
+              </view>
+            </picker>
+          </view>
+        </view>
+      </view>
+      <view class="ui-col" style="padding-left: 10px; padding-right: 10px;">
+        <view class="ui-col-content">
+          <view class="column-content">
+            <picker bindchange="changeType" value="{{selectType}}" range="{{type}}">
+              <view class="picker">
+                种族：{{type[selectType]}}
+              </view>
+            </picker>
+          </view>
+        </view>
+      </view>
+      <view class="ui-col" style="padding-right: 20px;">
+        <view class="ui-col-content">
+          <view class="column-content">
+            <view bindtap="search">查询</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 展示头像 -->
+  <scroll-view scroll-y style="height: 90vh;">
+
+    <view class="photo_head">
+      <view class="photo_head_item" wx:for="{{value}}" wx:key="{{item.id}}">
+        <image id="{{item.id}}" mode="aspectFit" class="photo_img" src="{{item.src}}" bindtap="selectImg" />
+        <view class="photo_title">{{item.name}}</view>
+      </view>
+    </view>
+  </scroll-view>
+
+
+</view>
