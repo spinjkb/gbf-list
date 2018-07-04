@@ -19,10 +19,15 @@
 /* 水平垂直居中 */
 /* 超出部分出省略号 */
 /* 多行文本超出部分省略号 */
-.text {
-  margin: 5px 10px;
-  color: #333;
-  line-height: 35px;
-  font-size: 14px;
-  text-indent: 28px;
+.image_swiper .swiper_item {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+.image_swiper .swiper_item image {
+  flex: 1;
+  margin-right: 5px;
+}
+.image_swiper .swiper_item image:last-child {
+  margin-right: 0;
 }

@@ -1,5 +1,16 @@
 <view>
-
+  <ui-nav-bar slot="nav-bar" custom-style="{{ {boxShadow: '0 0px 16px 0 #ccc',backgroundColor:'#fff'} }}" _pid="{{_pid}}">
+    <view class="ui-row" style="height:46px;">
+      <view class="ui-col ui-col-align-center align-center valign-middle" style="">
+        <view class="ui-col-content align-center valign-middle">
+          <view>
+            首页
+          </view>
+        </view>
+      </view>
+    </view>
+  </ui-nav-bar>
+  <view style="height:{{NAV_HEIGHT}}"></view>
   <!-- 筛选 -->
   <view class="select_container">
     <view class="ui-row" style="margin-bottom: 20px;">
@@ -34,16 +45,12 @@
       </view>
     </view>
   </view>
-  <!-- 展示头像 -->
-  <scroll-view scroll-y style="height: 90vh;">
-
+  <scroll-view scroll-y style="height: 81vh;">
     <view class="photo_head">
-      <view class="photo_head_item" wx:for="{{value}}" wx:key="{{item.id}}">
-        <image id="{{item.id}}" mode="aspectFit" class="photo_img" src="{{item.src}}" bindtap="selectImg" />
+      <view class="photo_head_item" wx:for="{{value}}" wx:key="{{item.id}}" wx:for-index="idx">
+        <image id="{{item.id}}" mode="aspectFit" class="photo_img" src="{{item.head}}" bindtap="selectImg" data-current="{{idx}}" />
         <view class="photo_title">{{item.name}}</view>
       </view>
     </view>
   </scroll-view>
-
-
 </view>

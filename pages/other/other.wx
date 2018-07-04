@@ -1,43 +1,43 @@
 <template>
   <view>
+    <!-- 自定义导航 -->
+    <ui-nav-bar slot="nav-bar" custom-style="{{ {boxShadow: '0 0px 16px 0 #ccc',backgroundColor:'#fff'} }}">
+      <ui-row height="46">
+        <ui-col vertical-align="middle" align="center">
+          <view>
+            关于
+          </view>
+        </ui-col>
+      </ui-row>
+    </ui-nav-bar>
+    <!-- 设置内容距离nav-bar高度占位 -->
+    <view style="height:{{NAV_HEIGHT}}"></view>
+    <view class="text">
+      北京引领视觉科技有限公司旗下品牌UI Leader，一直致力于为企业提供优质的前端解决方案产品。我们的目标是让企业用我们的前端解决方案产品，可以在PC端、移动端、Web端、微信端、物联网领域、大数据领域等众多平台都能做出高质量的应用，并且还能大大的节约开发成本。
+    </view>
+    
 
-      hello2222
   </view>
-    
-    
-
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      items: [],
-      val: 1
-    }
+  config: {
+    navigationBarTitleText: "about"
   },
-  methods: {
-    tabresult() {
-      ui.switchTab({
-        url: "/pages/other/setting"
-      })
-    }
-  },
-  mounted() {
-    for (let i = 30; i >= this.val; i--) {
-      this.items.push(`列表项目${i}`)
-    }
+  data: {
+    NAV_HEIGHT: wx.STATUS_BAR_HEIGHT + wx.DEFAULT_HEADER_HEIGHT + "px",
+    imgHeight: parseInt(wx.WIN_WIDTH / 750 * 312)
   }
 }
 </script>
 
 <style lang="less">
-.content {
-  padding: 10px;
-  height: 60px;
-  .title {
-    font-size: 20px;
-    text-align: center;
-  }
+.text {
+  margin: 5px 10px;
+  color: #333;
+  line-height: 35px;
+  font-size: 14px;
+  text-indent: 28px;
 }
 </style>

@@ -1,50 +1,52 @@
 <template>
   <view>
-    
+    <ui-nav-bar slot="nav-bar" custom-style="{{ {boxShadow: '0 0px 16px 0 #ccc',backgroundColor:'#fff'} }}">
+      <ui-row height="46">
+        <ui-col vertical-align="middle" align="center">
+          <view>
+            首页
+          </view>
+        </ui-col>
+      </ui-row>
+    </ui-nav-bar>
+    <view style="height:{{NAV_HEIGHT}}"></view>
     <!-- 筛选 -->
     <view class="select_container">
       <ui-row space-bottom="20">
-      <ui-col space-left="20">
-        <view class="column-content">
-          <picker bindchange="changeElement" value="{{selectElement}}" range="{{element}}">
-            <view class="picker">
-              属性：{{element[selectElement]}}
-            </view>
-          </picker>
-        </view>
-      </ui-col>
-      <ui-col space="20">
-        <view class="column-content">
-          <picker bindchange="changeType" value="{{selectType}}" range="{{type}}">
-            <view class="picker">
-              种族：{{type[selectType]}}
-            </view>
-          </picker>
-        </view>
-      </ui-col>
-      <ui-col space-right="20">
-        <view class="column-content">
-          <view bindtap="search">查询</view>
-        </view>
-      </ui-col>
-    </ui-row>
+        <ui-col space-left="20">
+          <view class="column-content">
+            <picker bindchange="changeElement" value="{{selectElement}}" range="{{element}}">
+              <view class="picker">
+                属性：{{element[selectElement]}}
+              </view>
+            </picker>
+          </view>
+        </ui-col>
+        <ui-col space="20">
+          <view class="column-content">
+            <picker bindchange="changeType" value="{{selectType}}" range="{{type}}">
+              <view class="picker">
+                种族：{{type[selectType]}}
+              </view>
+            </picker>
+          </view>
+        </ui-col>
+        <ui-col space-right="20">
+          <view class="column-content">
+            <view bindtap="search">查询</view>
+          </view>
+        </ui-col>
+      </ui-row>
     </view>
-    <!-- 展示头像 -->
-    <scroll-view scroll-y 
-      style="height: 90vh;" 
-      >
-
-      <view class="photo_head" >
-        <view class="photo_head_item" wx:for="{{value}}" wx:key="{{item.id}}" >
-          <image id="{{item.id}}" mode='aspectFit' class="photo_img" src="{{item.src}}" bindtap="selectImg"/>
+    <scroll-view scroll-y style="height: 81vh;">
+      <view class="photo_head">
+        <view class="photo_head_item" wx:for="{{value}}" wx:key="{{item.id}}" wx:for-index="idx">
+          <image id="{{item.id}}" mode='aspectFit' class="photo_img" src="{{item.head}}" bindtap="selectImg" data-current="{{idx}}" />
           <view class="photo_title">{{item.name}}</view>
         </view>
       </view>
     </scroll-view>
-
-
   </view>
-  
 </template>
 
 <script>
@@ -56,13 +58,17 @@ export default {
     navigationBarTextStyle: "black"
   },
   data: {
+    NAV_HEIGHT: wx.STATUS_BAR_HEIGHT + wx.DEFAULT_HEADER_HEIGHT + "px",
     value: Data,
     isShow: false,
     element: ["全部", "火", "水", "土", "风", "光", "暗"],
     selectElement: 0,
     type: ["全部", "人类", "兽耳", "豆丁", "牛族", "星晶兽", "未知"],
-    selectType: 0
+    selectType: 0,
+    items: [],
+    val: 30
   },
+
   changeElement(e) {
     this.setData({ selectElement: e.detail.value })
   },
@@ -70,10 +76,14 @@ export default {
     this.setData({ selectType: e.detail.value })
   },
   selectImg(e) {
-    wx.showToast({
-      title: "点击" + e.target.id,
-      icon: "success",
-      duration: 2000
+    // console.log(e.target.id)
+    wx.navigateTo({
+      url: "./person?id=" + e.target.id
+    })
+  },
+  navigateTo(index) {
+    wx.navigateTo({
+      url: this.items[index].url
     })
   }
 }
@@ -81,27 +91,21 @@ export default {
 
 <style lang="less">
 @import "./index.less";
-.photo_head {
-  width: 100%;
-  display: flex;
-  flex-flow: row wrap;
-  align-content: flex-start;
-  padding-left: 2%;
-  padding-right: 2%;
-  .photo_head_item {
-    box-sizing: border-box;
-    background-color: white;
-    flex: 0 0 46%;
-    margin-left: 2%;
-    margin-right: 2%;
-    .photo_img {
-      background-size: 90% 90%;
-      height: 100px;
-    }
-    .photo_title {
-      text-align: center;
-      display: block;
-    }
+.select_container {
+  margin: 10rpx 0;
+  .ui-row {
+    margin-top: 10rpx;
+    margin-bottom: 0 !important;
+  }
+  .column-content {
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    width: 100%;
+    background-color: #eee;
+    border-radius: 5px;
+    position: sticky;
+    top: 0rpx;
   }
 }
 </style>

@@ -1,0 +1,78 @@
+<template>
+    <view>
+        <ui-nav-bar slot="nav-bar" custom-style="{{ {boxShadow: '0 0px 16px 0 #ccc',backgroundColor:'#fff'} }}">
+            <ui-row height="46">
+                <ui-col vertical-align="middle" align="center" width="60" bindtap="navigateBack">
+                    <ui-icon type="arrow-left" size="16" color="#333"></ui-icon>
+                </ui-col>
+                <ui-col vertical-align="middle" align="center">
+                    <view>
+                        人物介绍
+                    </view>
+                </ui-col>
+                <ui-col vertical-align="middle" align="center" width="60">
+                </ui-col>
+            </ui-row>
+        </ui-nav-bar>
+        <view style="height:{{NAV_HEIGHT}}"></view>
+        <!-- 轮播 -->
+        <ui-divider>立绘</ui-divider>
+        <swiper indicator-dots class="image_swiper" circular current="0" indicator-color="rgba(51, 51, 51, 0.3)" indicator-active-color="#ff2a00">
+            <swiper-item wx:for="{{value.image}}" wx:key="{{item}}" wx:for-index="idx">
+                <view class="swiper_item">
+                    <image mode="aspectFit"  src="{{item}}" />
+                </view>
+            </swiper-item>
+        </swiper>
+        <view>111</view>
+        <view>111</view>
+        <view>111</view>
+        <view>111</view>
+        <view>111</view>
+        <view>111</view>
+        <view>111</view>
+        <view>111</view>
+        <view>111</view>
+    </view>
+</template>
+<style lang="less">
+.image_swiper {
+  .swiper_item {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    image {
+      flex: 1;
+      margin-right: 5px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+</style>
+<script>
+import Data from "./mock.js"
+export default {
+  config: {
+    navigationBarTitleText: "人物",
+    backgroundColor: "#F4F4F4",
+    navigationBarTextStyle: "black"
+  },
+  data: {
+    NAV_HEIGHT: wx.STATUS_BAR_HEIGHT + wx.DEFAULT_HEADER_HEIGHT + "px",
+    value: ""
+  },
+  onLoad(option) {
+    // var id = option.id
+    console.log(Data[15])
+    this.setData({
+      value: Data[15]
+    })
+  },
+  navigateBack() {
+    wx.navigateBack()
+  }
+}
+</script>
+

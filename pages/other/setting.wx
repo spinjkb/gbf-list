@@ -1,10 +1,8 @@
 <template>
   <view>
 
-      hello
+    hello
   </view>
-    
-    
 
 </template>
 
@@ -16,7 +14,7 @@ export default {
     navigationStyle: "custom",
     // navigationBarTextStyle: "white",
     backgroundColor: "#F9F9F9",
-    navigationBarTitleText:'hello'
+    navigationBarTitleText: "hello"
   },
   data() {
     return {

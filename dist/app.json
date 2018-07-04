@@ -1,14 +1,16 @@
 {
   "pages": [
-    "pages/other/setting",
+    "pages/home/index",
+    "pages/home/person",
     "pages/other/other",
-    "pages/home/index"
+    "pages/other/setting"
   ],
   "window": {
+    "navigationStyle": "custom",
     "backgroundTextStyle": "dark",
     "backgroundColor": "#efefef",
     "navigationBarBackgroundColor": "#ffffff",
-    "navigationBarTitleText": "TouchUI",
+    "navigationBarTitleText": "gbf",
     "navigationBarTextStyle": "black"
   },
   "networkTimeout": {
@@ -18,20 +20,21 @@
     "theme-color": "#39f"
   },
   "tabBar": {
-    "color": "#555",
-    "selectedColor": "#de3029",
-    "borderStyle": "rgba(231, 231, 231, 0.6)",
+    "color": "#7a7e83",
+    "selectedColor": "#39f",
     "backgroundColor": "#fff",
     "list": [
       {
-        "pagePath": "pages/other/setting",
-        "iconName": "首页",
-        "text": "演示1-1"
+        "pagePath": "pages/home/index",
+        "iconPath": "images/component.png",
+        "selectedIconPath": "images/component1.png",
+        "text": "首页"
       },
       {
         "pagePath": "pages/other/other",
-        "iconName": "setting",
-        "text": "演示1-2"
+        "iconPath": "images/user.png",
+        "selectedIconPath": "images/user1.png",
+        "text": "关于"
       }
     ]
   }
